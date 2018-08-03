@@ -1,18 +1,19 @@
 Rnode on raspberry pi 3b
 -----
 Deploying [Rchain node](https://github.com/kayvank/rchain) on [Raspberry pi 3b+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-deployment:
+
+Deployment steps:
 * OS installation
 * Prerequisite libraries and tools
 * set up classpath
 * rchain build
 
 ## OS installation
-Rnode, at this time, required a 64 bit architecture.  For this project I selected [openSUSE](https://www.opensuse.org/). 
+Rnode today requires a 64 bit architecture. I found [openSUSE](https://www.opensuse.org/) to be an excellent choice. 
 
-Installation binaries:  [rasperry pi openSUSE](https://en.opensuse.org/HCL:Raspberry_Pi3) 
+Installation binaries are found at: [rasperry pi openSUSE](https://en.opensuse.org/HCL:Raspberry_Pi3) 
 
-See OS installation tutorials for more detail:
+For more detail on OS installation refer to:
 * [HCL Raspberry Pi3](https://en.opensuse.org/HCL:Raspberry_Pi3)
 * [installation video](https://www.youtube.com/watch?v=UA9ByJwWhzs) 
 
@@ -32,9 +33,9 @@ BUG_REPORT_URL="https://bugs.opensuse.org"
 HOME_URL="https://www.opensuse.org/"
 ```
 ## Prerequisite
-all these tools are available thru [openSUSE YaSt](https://en.opensuse.org/Portal:YaST)
+Install the following libraries and packages on your pi
 
-Install:
+### [YaSt installs](https://en.opensuse.org/Portal:YaST):
 * jdk8-devel
 * automake cmake
 * apr-util 
@@ -45,7 +46,18 @@ Install:
 * libtool
 * tls 
 
-Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
+### Manual Installs
+* Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
+* clone, build and install netty-tcnative all its associated modules:
+
+```
+git clone git@github.com:netty/netty-tcnative.git
+cd netty-tcnative
+./mvnw compile
+sudo ./mvnw install
+```
+#### Note
+netty-tcnative installation is crucial and will take several hours. The installation is very OS and architecture specifics.  Make sure you follow the guide lines outlined in the [wiki](http://netty.io/wiki/forked-tomcat-native.html).
 
 ## CLASSPATH
 add these to your ~/.profile
