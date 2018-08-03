@@ -17,7 +17,7 @@ Some good OS installation tutorials:
 Here are my  OS specifics:
 
 ```
-pi@lucid-pi:~> cat /etc/os-release`kkkkk`
+pi@lucid-pi:~> cat /etc/os-release
 NAME="openSUSE Leap"
 VERSION="42.3"
 ID=opensuse
@@ -28,7 +28,7 @@ ANSI_COLOR="0;32"
 CPE_NAME="cpe:/o:opensuse:leap:42.3"
 BUG_REPORT_URL="https://bugs.opensuse.org"
 HOME_URL="https://www.opensuse.org/"
-``
+```
 ## Prerequisite
 all these tools are available thru [openSUSE YaSt](https://en.opensuse.org/Portal:YaST)
 Install:
