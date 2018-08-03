@@ -90,7 +90,7 @@ Install:
 Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
 u)
 
-## Set up CLASSPATH
+## CLASSPATH
 add these to your ~/.profile
 ```
 export M2_HOME=$HOME/.m2
@@ -127,5 +127,5 @@ git checkout -b raspberry-pi && git pull origin raspberry-pi
 follow [Developers guide](https://github.com/kayvank/rchain/tree/raspberry-pi#deverloper-guide)
 
 #### NOTE
-#####This is a hack for now.  
-for now you have to manually modify the ./bin/run script  add the system classpath to the script. See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341)
+This is very hacky 
+Manually modify the [rnode script](./bin/rnode) script and add the system CLASSPATH, [set](#CLASSPATH). See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341) for detail.
