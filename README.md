@@ -62,7 +62,7 @@ Some good OS installation tutorials:
 Here are my  OS specifics:
 
 ```
-pi@lucid-pi:~> cat /etc/os-release`kkkkk`
+pi@lucid-pi:~> cat /etc/os-release
 NAME="openSUSE Leap"
 VERSION="42.3"
 ID=opensuse
@@ -73,7 +73,7 @@ ANSI_COLOR="0;32"
 CPE_NAME="cpe:/o:opensuse:leap:42.3"
 BUG_REPORT_URL="https://bugs.opensuse.org"
 HOME_URL="https://www.opensuse.org/"
-``
+```
 ## Prerequisite
 all these tools are available thru [openSUSE YaSt](https://en.opensuse.org/Portal:YaST)
 Install:
@@ -99,12 +99,12 @@ export CLASSPATH="$CLASSPATH:$HOME/.local/share/java/java-cup-11b.jar"
 export CLASSPATH="$CLASSPATH:$HOME/.local/share/java/java-cup-11b-runtime.jar"
 export CLASSPATH=$CLASSPATH:$M2_HOME/repository/io/netty/netty-tcnative-boringssl-static/2.0.13.Final-SNAPSHOT/netty-tcnative-boringssl-static-2.0.13.Final-SNAPSHOT-linux-aarch_64.jar
 export CLASSPATH=$CLASSPATH:$M2_HOME/repository/io/netty/netty-tcnative-boringssl-static/2.0.13.Final-SNAPSHOT/netty-tcnative-boringssl-static-2.0.13.Final-SNAPSHOT.jar
-
 export SBT_OPTS="-Xms256m -Xmx512m"
 ```
 
 ## Rchain Build
 Note that this is a special build of the rchain rnode for the purpose of the raspberry pi.  To run node on pi, follow [rchain rnode exexution instruction](https://github.com/rchain/rchain/tree/dev/node#32-bootstrapping-a-private-network)
+
 ```
 git clone  git@github.com:kayvank/rchain-node-bin.git
 cd rchain-node
