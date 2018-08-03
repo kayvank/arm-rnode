@@ -102,11 +102,30 @@ export CLASSPATH=$CLASSPATH:$M2_HOME/repository/io/netty/netty-tcnative-boringss
 export SBT_OPTS="-Xms256m -Xmx512m"
 ```
 
-## Rchain Build
-Note that this is a special build of the rchain rnode for the purpose of the raspberry pi.  To run node on pi, follow [rchain rnode exexution instruction](https://github.com/rchain/rchain/tree/dev/node#32-bootstrapping-a-private-network)
+## Deploy Rchain
+* deploy the pi-built [image](./image) as outlined below
+* deploy your locally-built image
+
+### deploy pi-built image
+Note that this is a special build of the rchain rnode for the purpose of the raspberry pi.  You may simply run the image as outlined below.  To run node on pi, follow [rchain rnode exexution instruction](https://github.com/rchain/rchain/tree/dev/node#32-bootstrapping-a-private-network)
 
 ```
 git clone  git@github.com:kayvank/rchain-node-bin.git
 cd rchain-node
 run ./bin/rnode -s -p 4000
 ```
+
+### deploy locally-built image
+* This is based on my [fork of the rchain](https://github.com/kayvank/rchain/tree/raspberry-pi) project.  
+
+```
+git clone git@github.com:kayvank/rchain.git
+## make sure you use the raspberry-pi branch
+git checkout -b raspberry-pi && git pull origin raspberry-pi  
+```
+
+follow [Developers guide](https://github.com/kayvank/rchain/tree/raspberry-pi#deverloper-guide)
+
+#### NOTE
+#####This is a hack for now.  
+for now you have to manually modify the ./bin/run script  add the system classpath to the script. See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341)
