@@ -9,12 +9,14 @@ deployment:
 
 ## OS installation
 Rnode, at this time, required a 64 bit architecture.  For this project I selected [openSUSE](https://www.opensuse.org/). 
+
 Installation binaries:  [rasperry pi openSUSE](https://en.opensuse.org/HCL:Raspberry_Pi3) 
-Some good OS installation tutorials:
+
+See OS installation tutorials for more detail:
 * [HCL Raspberry Pi3](https://en.opensuse.org/HCL:Raspberry_Pi3)
 * [installation video](https://www.youtube.com/watch?v=UA9ByJwWhzs) 
 
-Here are my  OS specifics:
+### OS Specs and Version:
 
 ```
 pi@lucid-pi:~> cat /etc/os-release
@@ -31,6 +33,7 @@ HOME_URL="https://www.opensuse.org/"
 ```
 ## Prerequisite
 all these tools are available thru [openSUSE YaSt](https://en.opensuse.org/Portal:YaST)
+
 Install:
 * jdk8-devel
 * automake cmake
@@ -43,52 +46,6 @@ Install:
 * tls 
 
 Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
-
-To bring up node, follow the [rchain rnode instruction](# Rnode on raspberry pi 3b
-Deploying [Rchain node](https://github.com/kayvank/rchain) on [Raspberry pi 3b+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-The  deployment 
-* OS installation
-* Prerequisite libraries and tools
-* rchain build
-
-## OS installation
-
-Rnode, at this time, required a 64 bit architecture.  For this project I selected [openSUSE](https://www.opensuse.org/). 
-Installation binaries:  [rasperry pi openSUSE](https://en.opensuse.org/HCL:Raspberry_Pi3) 
-Some good OS installation tutorials:
-* [HCL Raspberry Pi3](https://en.opensuse.org/HCL:Raspberry_Pi3)
-* [installation video](https://www.youtube.com/watch?v=UA9ByJwWhzs) 
-
-Here are my  OS specifics:
-
-```
-pi@lucid-pi:~> cat /etc/os-release
-NAME="openSUSE Leap"
-VERSION="42.3"
-ID=opensuse
-ID_LIKE="suse"
-VERSION_ID="42.3"
-PRETTY_NAME="openSUSE Leap 42.3"
-ANSI_COLOR="0;32"
-CPE_NAME="cpe:/o:opensuse:leap:42.3"
-BUG_REPORT_URL="https://bugs.opensuse.org"
-HOME_URL="https://www.opensuse.org/"
-```
-## Prerequisite
-all these tools are available thru [openSUSE YaSt](https://en.opensuse.org/Portal:YaST)
-Install:
-* jdk8-devel
-* automake cmake
-* apr-util 
-* ninja
-* gcc c++
-* lmdb-devel 
-* openSSL
-* libtool
-* tls 
-
-Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
-u)
 
 ## CLASSPATH
 add these to your ~/.profile
@@ -103,7 +60,7 @@ export SBT_OPTS="-Xms256m -Xmx512m"
 ```
 
 ## Deploy Rchain
-* deploy the pi-built [image](./image) as outlined below
+* deploy the pi-built [image](./bin-image) as outlined below
 * deploy your locally-built image
 
 ### deploy pi-built image
@@ -127,5 +84,7 @@ git checkout -b raspberry-pi && git pull origin raspberry-pi
 follow [Developers guide](https://github.com/kayvank/rchain/tree/raspberry-pi#deverloper-guide)
 
 #### NOTE
-This is very hacky 
-Manually modify the [rnode script](./bin/rnode) script and add the system CLASSPATH, [set](#CLASSPATH). See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341) for detail.
+
+This is very hacky.
+
+Manually modify the [rnode script](./bin/rnode) script and add the system CLASSPATH, [set](#classpath). See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341) for detail.
