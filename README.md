@@ -49,8 +49,16 @@ Install the following libraries and packages on your pi
 * tls 
 
 #### Manual Installs
-* Download and install [libsodium](https://download.libsodium.org/doc/installation/ ) as outlined in the wiki
-* clone, build and install netty-tcnative all its associated modules:
+* [libsodium](https://download.libsodium.org/doc/installation/ )
+* [netty-tcnative](https://github.com/netty/netty-tcnative) 
+
+##### libsodium
+Download and install [libsodium](https://download.libsodium.org/libsodium/releases/) as outlined in the [wiki](https://download.libsodium.org/doc/installation/)
+
+make sure you restart your pi post installation
+
+##### netty-tcnative
+This is by far the most complicated part of the deployment procedure as netty-tcnative is a crucial node dependency.  netty-tcnative install will take several hours.  For more detail see [wiki](http://netty.io/wiki/forked-tomcat-native.html)
 
 ```
 git clone git@github.com:netty/netty-tcnative.git
@@ -58,8 +66,6 @@ cd netty-tcnative
 ./mvnw compile
 sudo ./mvnw install
 ```
-##### Note
-netty-tcnative installation is crucial and will take several hours. The installation is very OS and architecture specifics.  Make sure you follow the guide lines outlined in the [wiki](http://netty.io/wiki/forked-tomcat-native.html).
 
 ### CLASSPATH
 add these to your ~/.profile
