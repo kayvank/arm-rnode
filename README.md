@@ -2,9 +2,11 @@ Rnode on raspberry pi 3b
 -----
 Deploying [Rchain node](https://github.com/kayvank/rchain) on [Raspberry pi 3b+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
 
-this deployment is based on locally built of my [rchain fork](https://github.com/kayvank/rchain/tree/raspberry-pi) raspberry-pi branch
+The deployment is based on a locally built of my [rchain fork](https://github.com/kayvank/rchain/tree/raspberry-pi) raspberry-pi branch
 
 ## Deployment steps:
+The deployment steps are:
+
 * OS installation
 * Prerequisite libraries and tools
 * set up classpath
@@ -13,7 +15,7 @@ this deployment is based on locally built of my [rchain fork](https://github.com
 ### OS installation
 node requires a 64 bit architecture. I found [openSUSE](https://www.opensuse.org/) to be an excellent choice for 64bit Arm architecture. 
 
-Installation binaries are found at: [rasperry pi openSUSE](https://en.opensuse.org/HCL:Raspberry_Pi3) 
+[openSUSUE Leap 15.0](https://en.opensuse.org/HCL:Raspberry_Pi3) installation binaries are found at [XFCE image](http://download.opensuse.org/ports/aarch64/distribution/leap/15.0/appliances/openSUSE-Leap15.0-ARM-XFCE-raspberrypi3.aarch64-2018.07.02-Buildlp150.1.1.raw.xz)
 
 For more detail on OS installation refer to:
 * [HCL Raspberry Pi3](https://en.opensuse.org/HCL:Raspberry_Pi3)
