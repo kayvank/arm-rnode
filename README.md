@@ -109,4 +109,4 @@ follow [Developers guide](https://github.com/kayvank/rchain/tree/raspberry-pi#de
 
 This is very hacky.
 
-Manually modify the [rnode script](./bin/rnode) script and add the system CLASSPATH, [set](#classpath). See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341) for detail.
+Manually modify the [rnode script](./bin-image/bin/rnode) script and add the system CLASSPATH, [set](#classpath). See line [341 EOL](https://github.com/kayvank/rchain-node-bin/blob/master/bin-image/bin/rnode#L341) for detail.
